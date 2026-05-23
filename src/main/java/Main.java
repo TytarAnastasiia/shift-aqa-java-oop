@@ -1,12 +1,13 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        // cоздание Autobot
+        // создание по одному трансформеру
         Autobot optimus = new Autobot("Optimus Prime", "Autobots");
-
-        // cоздание Decepticon
         Decepticon megatron = new Decepticon("Megatron", "Decepticons");
 
-        // Autobot выполняет действия
+        // выполнение действий
         System.out.println("=== Autobot actions ===");
         optimus.run();
         optimus.fire();
@@ -15,11 +16,22 @@ public class Main {
 
         System.out.println();
 
-        // Decepticon выполняет действия
         System.out.println("=== Decepticon actions ===");
         megatron.run();
         megatron.fire();
         megatron.charge();
         megatron.transform();
+
+        System.out.println();
+
+        // список
+        List<Transformer> transformers = new ArrayList<>();
+        transformers.add(optimus);
+        transformers.add(megatron);
+
+        System.out.println("=== List of transformers ===");
+        for (Transformer t : transformers) {
+            System.out.println(t);
+        }
     }
 }
